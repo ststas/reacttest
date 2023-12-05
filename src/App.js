@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import './App.css';
-import Counter from "./Counter";
-import Form from './Form';
+import Counter from "./components/Counter";
+import Form from './components/Form/Form';
 
 
 function App() {

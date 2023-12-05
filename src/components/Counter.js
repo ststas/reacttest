@@ -1,5 +1,5 @@
 import { observer } from "mobx-react-lite"
-import { counterStore } from "./stores/counter-store"
+import { counterStore } from "../stores/counter-store"
 
 function Counter () {
 
