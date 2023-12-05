@@ -1,153 +1,157 @@
 {
   "homepage": "https://ststas.github.io/reacttest",
-	"name": "employee-card",
-	"version": "0.1.0",
-	"private": true,
-	"dependencies": {
-		"@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-		"@testing-library/jest-dom": "^5.17.0",
-		"@testing-library/react": "^13.4.0",
-		"@testing-library/user-event": "^13.5.0",
-		"bulma": "^0.9.4",
-		"clsx": "^2.0.0",
-		"jest": "^29.7.0",
-		"jest-environment-jsdom": "^29.7.0",
-		"prop-types": "^15.8.1",
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0",
-		"react-scripts": "5.0.1",
-		"saas": "^1.0.0",
-		"web-vitals": "^2.1.4"
-	},
-	"scripts": {
-		"start": "react-scripts start",
-		"build": "react-scripts build",
-		"eject": "react-scripts eject",
-		"test": "jest",
+  "name": "employee-card",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "bulma": "^0.9.4",
+    "clsx": "^2.0.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "mobx": "^6.12.0",
+    "mobx-react": "^9.1.0",
+    "mobx-react-lite": "^4.0.5",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.48.2",
+    "react-scripts": "5.0.1",
+    "saas": "^1.0.0",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject",
+    "test": "jest",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-		"lint": "eslint . --ext .js,.jsx .",
-		"lint:fix": "npm run lint -- --fix",
-		"format": "prettier . --write",
-		"prepare": "husky install",
-		"storybook": "storybook dev -p 6006",
-		"build-storybook": "storybook build",
-		"commit": "cz"
-	},
-	"devDependencies": {
-		"@storybook/addon-essentials": "^7.5.3",
-		"@storybook/addon-interactions": "^7.5.3",
-		"@storybook/addon-links": "^7.5.3",
-		"@storybook/addon-onboarding": "^1.0.8",
-		"@storybook/blocks": "^7.5.3",
-		"@storybook/preset-create-react-app": "^7.5.3",
-		"@storybook/react": "^7.5.3",
-		"@storybook/react-webpack5": "^7.5.3",
-		"@storybook/testing-library": "^0.2.2",
-		"babel-plugin-named-exports-order": "^0.0.2",
-		"cz-conventional-changelog": "^3.3.0",
-		"eslint-config-airbnb": "19.0.4",
-		"eslint-config-prettier": "9.0.0",
-		"eslint-plugin-storybook": "^0.6.15",
-		"gh-pages": "^6.1.0",
-		"husky": "8.0.3",
-		"identity-obj-proxy": "3.0.0",
-		"lint-staged": "15.1.0",
-		"prettier": "3.1.0",
-		"storybook": "^7.5.3",
-		"webpack": "^5.89.0"
-	},
-	"eslintConfig": {
-		"extends": [
-			"react-app",
-			"react-app/jest",
-			"airbnb",
-			"airbnb/hooks",
-			"prettier",
-			"plugin:storybook/recommended"
-		],
-		"rules": {
-			"react/jsx-filename-extension": [
-				1,
-				{
-					"extensions": [
-						".js",
-						".jsx"
-					]
-				}
-			],
-			"react/react-in-jsx-scope": "off",
-			"import/prefer-default-export": "off",
-			"react/function-component-definition": "off",
-			"react/jsx-props-no-spreading": "off",
-			"react/no-unescaped-entities": "off",
-			"react/button-has-type": "off"
-		},
-		"overrides": [
-			{
-				"files": [
-					"**/*.stories.*",
-					"src/stories/**/*"
-				],
-				"rules": {
-					"import/no-anonymous-default-export": "off",
-					"import/no-extraneous-dependencies": "off"
-				}
-			}
-		]
-	},
-	"browserslist": {
-		"production": [
-			">0.2%",
-			"not dead",
-			"not op_mini all"
-		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version",
-			"last 1 safari version"
-		]
-	},
-	"lint-staged": {
-		"*.{js,jsx}": "npm run lint",
-		"*.{js,jsx,css,md,html,json}": "npm run format"
-	},
-	"config": {
-		"commitizen": {
-			"path": "./node_modules/cz-conventional-changelog"
-		}
-	},
-	"husky": {
-		"hooks": {
-			"prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true"
-		}
-	},
-	"babel": {
-		"presets": [
-			"@babel/preset-env",
-			[
-				"@babel/preset-react",
-				{
-					"runtime": "automatic"
-				}
-			]
-		]
-	},
-	"jest": {
-		"rootDir": ".",
-		"testEnvironment": "jsdom",
-		"setupFilesAfterEnv": [
-			"<rootDir>/src/setupTests.js"
-		],
-		"testMatch": [
-			"**/*.test.js"
-		],
-		"transform": {
-			"^.+\\.(js|jsx)$": "babel-jest",
-			"^.+\\.svg$": "<rootDir>/svgTransform.js"
-		},
-		"moduleNameMapper": {
-			"\\.(css|scss)$": "identity-obj-proxy"
-		}
-	}
+    "lint": "eslint . --ext .js,.jsx .",
+    "lint:fix": "npm run lint -- --fix",
+    "format": "prettier . --write",
+    "prepare": "husky install",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "commit": "cz"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.5.3",
+    "@storybook/addon-interactions": "^7.5.3",
+    "@storybook/addon-links": "^7.5.3",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/blocks": "^7.5.3",
+    "@storybook/preset-create-react-app": "^7.5.3",
+    "@storybook/react": "^7.5.3",
+    "@storybook/react-webpack5": "^7.5.3",
+    "@storybook/testing-library": "^0.2.2",
+    "babel-plugin-named-exports-order": "^0.0.2",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint-config-airbnb": "19.0.4",
+    "eslint-config-prettier": "9.0.0",
+    "eslint-plugin-storybook": "^0.6.15",
+    "gh-pages": "^6.1.0",
+    "husky": "8.0.3",
+    "identity-obj-proxy": "3.0.0",
+    "lint-staged": "15.1.0",
+    "prettier": "3.1.0",
+    "storybook": "^7.5.3",
+    "webpack": "^5.89.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest",
+      "airbnb",
+      "airbnb/hooks",
+      "prettier",
+      "plugin:storybook/recommended"
+    ],
+    "rules": {
+      "react/jsx-filename-extension": [
+        1,
+        {
+          "extensions": [
+            ".js",
+            ".jsx"
+          ]
+        }
+      ],
+      "react/react-in-jsx-scope": "off",
+      "import/prefer-default-export": "off",
+      "react/function-component-definition": "off",
+      "react/jsx-props-no-spreading": "off",
+      "react/no-unescaped-entities": "off",
+      "react/button-has-type": "off"
+    },
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*",
+          "src/stories/**/*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off",
+          "import/no-extraneous-dependencies": "off"
+        }
+      }
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "lint-staged": {
+    "*.{js,jsx}": "npm run lint",
+    "*.{js,jsx,css,md,html,json}": "npm run format"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true"
+    }
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      [
+        "@babel/preset-react",
+        {
+          "runtime": "automatic"
+        }
+      ]
+    ]
+  },
+  "jest": {
+    "rootDir": ".",
+    "testEnvironment": "jsdom",
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/setupTests.js"
+    ],
+    "testMatch": [
+      "**/*.test.js"
+    ],
+    "transform": {
+      "^.+\\.(js|jsx)$": "babel-jest",
+      "^.+\\.svg$": "<rootDir>/svgTransform.js"
+    },
+    "moduleNameMapper": {
+      "\\.(css|scss)$": "identity-obj-proxy"
+    }
+  }
 }

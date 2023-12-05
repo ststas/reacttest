@@ -15,4 +15,4 @@ insert_final_newline = true
 trim_trailing_whitespace = false
 
 [*.{html,scss,css,js,mjs,pug,ts,tsx}]
-indent_size = 4
+indent_size = 2
