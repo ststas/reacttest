@@ -1,18 +1,18 @@
-import { makeAutoObservable } from "mobx"
+import { makeAutoObservable } from 'mobx';
 
 class CounterStore {
-    count = 0
+	count = 0;
 
-    constructor() {
-        makeAutoObservable(this)
-    }
+	constructor() {
+		makeAutoObservable(this);
+	}
 
-    increase(value) {
-        this.count += value
-    }
+	increase(value) {
+		this.count += value;
+	}
 
-    decrease(value) {
-        this.count -= value
-    }
+	decrease(value) {
+		this.count -= value;
+	}
 }
-export const counterStore = new CounterStore()
+export const counterStore = new CounterStore();
