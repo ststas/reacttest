@@ -5,6 +5,7 @@ import Form from '../Form/Form';
 import NewForm from '../NewForm/NewForm';
 import Button from '../Button/Button';
 import Drumpads from '../Drumpads/Drumpads';
+import NewNewForm from '../NewNewForm/NewNewForm';
 
 function App() {
 	return (
@@ -12,7 +13,8 @@ function App() {
 			{/* <Drumpads /> */}
 			{/* <Counter/> */}
 			{/* <Form /> */}
-			<NewForm />
+			{/* <NewForm /> */}
+			<NewNewForm />
 			{/* <Button/> */}
 		</div>
 	);
